@@ -18,6 +18,9 @@ class FrontController extends Controller
             'posts' => $posts,
             'name' => $request->name,
             ];
-        return view('front.index',$param);
+        //fwrite(STDERR, print_r('a'), TRUE));
+        //dd('OK');
+        //dd($user);
+        return view('front.index', $param);
     }
 }

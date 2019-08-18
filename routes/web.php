@@ -12,17 +12,18 @@
 */
 
 Route::get('/', 'FrontController@index');
-Route::get('/category', 'CategoryController@index');
-Route::get('/ranking', 'RankingController@index');
-Route::get('/tout', 'ToutController@index');
-Route::get('/mon_page', 'MonpageController@index')
-->middleware('auth');
-
-
+// Resourceful Routing
 Auth::routes();
-
-Route::get('/home', 'FrontController@index');
+Route::resource('categories', 'CategoryController');
 Route::resource('posts', 'PostController');
-Route::get('/store', 'PostController@create')
-->middleware('auth');
-Route::get('comment','CommentsController@index');
+Route::resource('comments', 'CommentsController');
+
+#Route::get('/category', 'CategoryController@index');
+#Route::get('/ranking', 'RankingController@index');
+#Route::get('/tout', 'ToutController@index');
+#Route::get('/mon_page', 'MonpageController@index')
+#->middleware('auth');
+// Route::get('/home', 'FrontController@index');
+// Route::get('/store', 'PostController@create')
+// ->middleware('auth');
+// Route::get('comment','CommentsController@index');
